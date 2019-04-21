@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+development:
+  <<: *default
+  database: find_anything
+  username: root
+  password: root
+ 
+
+production:
+  <<: *default
+  database: find_anything
+  username: root
+  password: root
