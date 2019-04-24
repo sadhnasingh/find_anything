@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <center>
+   
+<%= form_for :savenames, :url => savenames_path, html: {id: "question_submit"}, class: "form-horizontal" do |form| %>
+<div class="well bs-component">
+     <h5 class="card-title">Love Calculator</h5><br>
+   <div class="container-fluid">
+    <div class="form-group">
+<div class="field">
+  <div class="row">
+    <div class="col-md-2">
+  <i class="glyphicon glyphicon-user" style="font-size:30px;color:red;"></i>
+  </div>
+   <div class="col-md-8">
+    <%= form.text_field :first, placeholder: 'your name ', class: 'form-control', style: ' width: 100%; ', required: true%>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div><span class="pl-4 pr-4">+<i class="glyphicon glyphicon-heart " style="font-size:30px;color:red;"></i></span></div><br>
+    <div class="form-group">
+  <div class="field">
+    <div class="row">
+    <div class="col-md-2">
+  <i class="glyphicon glyphicon-user" style="font-size:30px;color:red;"></i>
+  </div>
+  <div class="col-md-8">
+    <%= form.text_field :second, placeholder: 'your love name',class: 'form-control', style: ' width: 100%; ', required: true%>
+  </div></div></div></div>
+</div><br>
+  <div class="actions">
+    <%= form.submit 'calculate ' ,:class => 'btn btn-success',  onclick: 'checkloveper()'%>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+
+<%end%>
+<br>
+<input type="text" name="" id="lovevalue" class="form-control" placeholder="Love Percentage" style="width: 50%">
+</div>
+</div>
+  </center>
+</body>
+
+</html>
+
+<style type="text/css">
+  body{
+    background-image: url("https://gifimage.net/wp-content/uploads/2017/10/cuori-gif-11.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+</style>
+<script type="text/javascript">
+  function checkloveper(){
+
+    var lovedata = Math.random() * 100;
+    lovedata = Math.floor(lovedata);
+    document.getElementById('lovevalue').value = lovedata + "%";
+  }
+</script>
+<style type="text/css">
+.btn-success{
+  width: 150px;
+  height: 40px;
+}
+   .container-fluid {
+   margin-right: auto;
+   margin-left: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   }
+   .well {
+   margin-left: 400px;
+   margin-right: 400px;
+   margin-top: 143px;
+   min-height: 25px;
+   padding: 19px;
+   margin-bottom: 20px;
+   background-color: #D5DBDB;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+   background-image: url('https://images.unsplash.com/photo-1534448177492-6d698f12a59a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+   }
+   .well {
+   -webkit-box-shadow: none;
+   box-shadow: none;
+   }
+</style>
